@@ -37,12 +37,12 @@ def lambda_handler(event, context):
 # Classification
 
 import json
-import sagemaker  #had to use lambda layer to utilize sagemaker pakage
+import sagemaker
 import base64
 from sagemaker.serializers import IdentitySerializer
 
 # Fill this in with the name of your deployed model
-ENDPOINT = "image-classification-2021-11-12-14-27-45-190"
+ENDPOINT = "image-classification-2021-11-14-03-08-32-250"
 
 def lambda_handler(event, context):
 
@@ -76,7 +76,7 @@ def lambda_handler(event, context):
 
 import json
 
-THRESHOLD = 0.7
+THRESHOLD = 0.97
 
 
 def lambda_handler(event, context):
