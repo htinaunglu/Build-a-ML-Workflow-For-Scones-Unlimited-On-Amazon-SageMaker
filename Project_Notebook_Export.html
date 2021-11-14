@@ -13144,7 +13144,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13157,7 +13157,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span> <span class="n">show_versions</span><span class="p">()</span>
@@ -13180,12 +13180,11 @@ Note: you may need to restart the kernel to use updated packages.
 <pre>
 INSTALLED VERSIONS
 ------------------
-commit           : 945c9ed766a61c7d2c0a7cbb251b6edebf9cb7d5
+commit           : None
 python           : 3.7.10.final.0
 python-bits      : 64
 OS               : Linux
 OS-release       : 4.14.248-189.473.amzn2.x86_64
-Version          : #1 SMP Mon Sep 27 05:52:26 UTC 2021
 machine          : x86_64
 processor        : 
 byteorder        : little
@@ -13193,7 +13192,7 @@ LC_ALL           : C.UTF-8
 LANG             : C.UTF-8
 LOCALE           : en_US.UTF-8
 
-pandas           : 1.3.4
+pandas           : 1.0.1
 numpy            : 1.20.3
 pytz             : 2019.3
 dateutil         : 2.8.1
@@ -13215,15 +13214,17 @@ IPython          : 7.12.0
 pandas_datareader: None
 bs4              : 4.8.2
 bottleneck       : 1.3.2
-fsspec           : 2021.11.0
 fastparquet      : None
 gcsfs            : None
+lxml.etree       : 4.6.4
 matplotlib       : 3.1.3
 numexpr          : 2.7.1
 odfpy            : None
 openpyxl         : 3.0.3
 pandas_gbq       : None
 pyarrow          : 6.0.0
+pytables         : None
+pytest           : 5.3.5
 pyxlsb           : None
 s3fs             : 2021.11.0
 scipy            : 1.4.1
@@ -13233,6 +13234,7 @@ tabulate         : 0.8.9
 xarray           : None
 xlrd             : 1.2.0
 xlwt             : 1.3.0
+xlsxwriter       : 1.2.7
 numba            : 0.54.1
 </pre>
 </div>
@@ -13244,7 +13246,7 @@ numba            : 0.54.1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -14068,7 +14070,7 @@ memory usage: 31.2+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sagemaker</span>
@@ -15418,7 +15420,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use the image_uris function to retrieve the latest &#39;image-classification&#39; image </span>
@@ -15441,7 +15443,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">img_classifier_model</span><span class="o">=</span><span class="n">sagemaker</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">Estimator</span><span class="p">(</span>
@@ -15471,13 +15473,13 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">img_classifier_model</span><span class="o">.</span><span class="n">set_hyperparameters</span><span class="p">(</span>
     <span class="n">image_shape</span><span class="o">=</span> <span class="s1">&#39;3,32,32&#39;</span><span class="p">,</span> <span class="c1"># TODO: Fill in</span>
-    <span class="n">num_classes</span><span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="c1"># TODO: Fill in</span>
-    <span class="n">num_training_samples</span><span class="o">=</span> <span class="mi">100</span> <span class="c1"># TODO: fill in</span>
+    <span class="n">num_classes</span><span class="o">=</span> <span class="mi">120</span><span class="p">,</span> <span class="c1"># change the hyperparameter after first review</span>
+    <span class="n">num_training_samples</span><span class="o">=</span> <span class="mi">120</span> <span class="c1"># change the hyperparameter after first review</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -15496,7 +15498,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sagemaker.debugger</span> <span class="kn">import</span> <span class="n">Rule</span><span class="p">,</span> <span class="n">rule_configs</span>
@@ -15536,13 +15538,188 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">img_classifier_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">model_inputs</span><span class="p">)</span> <span class="c1">#I have already trained already in the previous sessions, so skip this cell now to avoid cost.</span>
+<span class="c1"># This is the second revision after a review to ratrain the model with new hyper parameter and show display.</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2021-11-14 00:54:50 Starting - Starting the training job...
+2021-11-14 00:55:14 Starting - Launching requested ML instancesProfilerReport-1636851289: InProgress
+......
+2021-11-14 00:56:14 Starting - Preparing the instances for training...............
+2021-11-14 00:58:41 Downloading - Downloading input data
+2021-11-14 00:58:41 Training - Downloading the training image...
+2021-11-14 00:59:15 Training - Training image download completed. Training in progress.<span class="ansi-blue-fg">Docker entrypoint called with argument(s): train</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Reading default configuration from /opt/amazon/lib/python3.7/site-packages/image_classification/default-input.json: {&#39;use_pretrained_model&#39;: 0, &#39;num_layers&#39;: 152, &#39;epochs&#39;: 30, &#39;learning_rate&#39;: 0.1, &#39;lr_scheduler_factor&#39;: 0.1, &#39;optimizer&#39;: &#39;sgd&#39;, &#39;momentum&#39;: 0, &#39;weight_decay&#39;: 0.0001, &#39;beta_1&#39;: 0.9, &#39;beta_2&#39;: 0.999, &#39;eps&#39;: 1e-08, &#39;gamma&#39;: 0.9, &#39;mini_batch_size&#39;: 32, &#39;image_shape&#39;: &#39;3,224,224&#39;, &#39;precision_dtype&#39;: &#39;float32&#39;}</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Merging with provided configuration from /opt/ml/input/config/hyperparameters.json: {&#39;num_classes&#39;: &#39;120&#39;, &#39;num_training_samples&#39;: &#39;120&#39;, &#39;image_shape&#39;: &#39;3,32,32&#39;}</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Final configuration: {&#39;use_pretrained_model&#39;: 0, &#39;num_layers&#39;: 152, &#39;epochs&#39;: 30, &#39;learning_rate&#39;: 0.1, &#39;lr_scheduler_factor&#39;: 0.1, &#39;optimizer&#39;: &#39;sgd&#39;, &#39;momentum&#39;: 0, &#39;weight_decay&#39;: 0.0001, &#39;beta_1&#39;: 0.9, &#39;beta_2&#39;: 0.999, &#39;eps&#39;: 1e-08, &#39;gamma&#39;: 0.9, &#39;mini_batch_size&#39;: 32, &#39;image_shape&#39;: &#39;3,32,32&#39;, &#39;precision_dtype&#39;: &#39;float32&#39;, &#39;num_classes&#39;: &#39;120&#39;, &#39;num_training_samples&#39;: &#39;120&#39;}</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Searching for .lst files in /opt/ml/input/data/train_lst.</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Creating record files for train.lst</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Done creating record files...</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Searching for .lst files in /opt/ml/input/data/validation_lst.</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Creating record files for test.lst</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Done creating record files...</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] use_pretrained_model: 0</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] multi_label: 0</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Performing random weight initialization</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] ---- Parameters ----</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] num_layers: 152</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] data type: &lt;class &#39;numpy.float32&#39;&gt;</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] epochs: 30</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] optimizer: sgd</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] momentum: 0.9</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] weight_decay: 0.0001</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] learning_rate: 0.1</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] num_training_samples: 120</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] mini_batch_size: 32</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] image_shape: 3,32,32</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] num_classes: 120</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] augmentation_type: None</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] kv_store: device</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] checkpoint_frequency not set, will store the best model</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] --------------------</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:13 INFO 140120243799872] Setting number of threads: 3</span>
+<span class="ansi-blue-fg">[00:59:24] /opt/brazil-pkg-cache/packages/AIAlgorithmsMXNet/AIAlgorithmsMXNet-1.3.x_ecl_Cuda_10.1.x.6753.0/AL2_x86_64/generic-flavor/src/src/operator/nn/./cudnn/./cudnn_algoreg-inl.h:97: Running performance tests to find the best convolution algorithm, this can take a while... (setting env variable MXNET_CUDNN_AUTOTUNE_DEFAULT to 0 to disable)</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:32 INFO 140120243799872] Epoch[0] Train-accuracy=0.447917</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:32 INFO 140120243799872] Epoch[0] Time cost=8.539</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:33 INFO 140120243799872] Epoch[0] Validation-accuracy=0.494792</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:34 INFO 140120243799872] Storing the best model with validation accuracy: 0.494792</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:34 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0001.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:36 INFO 140120243799872] Epoch[1] Train-accuracy=0.604167</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:36 INFO 140120243799872] Epoch[1] Time cost=1.381</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:37 INFO 140120243799872] Epoch[1] Validation-accuracy=0.500000</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:38 INFO 140120243799872] Storing the best model with validation accuracy: 0.500000</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:38 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0002.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:39 INFO 140120243799872] Epoch[2] Train-accuracy=0.593750</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:39 INFO 140120243799872] Epoch[2] Time cost=1.348</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:41 INFO 140120243799872] Epoch[2] Validation-accuracy=0.515625</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:41 INFO 140120243799872] Storing the best model with validation accuracy: 0.515625</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:42 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0003.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:43 INFO 140120243799872] Epoch[3] Train-accuracy=0.541667</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:43 INFO 140120243799872] Epoch[3] Time cost=1.337</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:45 INFO 140120243799872] Epoch[3] Validation-accuracy=0.508929</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:46 INFO 140120243799872] Epoch[4] Train-accuracy=0.593750</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:46 INFO 140120243799872] Epoch[4] Time cost=1.394</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:48 INFO 140120243799872] Epoch[4] Validation-accuracy=0.505208</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:50 INFO 140120243799872] Epoch[5] Train-accuracy=0.697917</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:50 INFO 140120243799872] Epoch[5] Time cost=1.391</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:51 INFO 140120243799872] Epoch[5] Validation-accuracy=0.500000</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:53 INFO 140120243799872] Epoch[6] Train-accuracy=0.708333</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:53 INFO 140120243799872] Epoch[6] Time cost=1.356</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:55 INFO 140120243799872] Epoch[6] Validation-accuracy=0.515625</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:56 INFO 140120243799872] Epoch[7] Train-accuracy=0.625000</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:56 INFO 140120243799872] Epoch[7] Time cost=1.416</span>
+<span class="ansi-blue-fg">[11/14/2021 00:59:58 INFO 140120243799872] Epoch[7] Validation-accuracy=0.491071</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:00 INFO 140120243799872] Epoch[8] Train-accuracy=0.562500</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:00 INFO 140120243799872] Epoch[8] Time cost=1.364</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:01 INFO 140120243799872] Epoch[8] Validation-accuracy=0.500000</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:03 INFO 140120243799872] Epoch[9] Train-accuracy=0.666667</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:03 INFO 140120243799872] Epoch[9] Time cost=1.381</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:05 INFO 140120243799872] Epoch[9] Validation-accuracy=0.515625</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:07 INFO 140120243799872] Epoch[10] Train-accuracy=0.604167</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:07 INFO 140120243799872] Epoch[10] Time cost=1.366</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:08 INFO 140120243799872] Epoch[10] Validation-accuracy=0.494792</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:10 INFO 140120243799872] Epoch[11] Train-accuracy=0.697917</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:10 INFO 140120243799872] Epoch[11] Time cost=1.350</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:12 INFO 140120243799872] Epoch[11] Validation-accuracy=0.571429</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:12 INFO 140120243799872] Storing the best model with validation accuracy: 0.571429</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:13 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0012.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:14 INFO 140120243799872] Epoch[12] Train-accuracy=0.656250</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:14 INFO 140120243799872] Epoch[12] Time cost=1.339</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:15 INFO 140120243799872] Epoch[12] Validation-accuracy=0.630208</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:16 INFO 140120243799872] Storing the best model with validation accuracy: 0.630208</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:16 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0013.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:18 INFO 140120243799872] Epoch[13] Train-accuracy=0.625000</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:18 INFO 140120243799872] Epoch[13] Time cost=1.342</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:19 INFO 140120243799872] Epoch[13] Validation-accuracy=0.520833</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:21 INFO 140120243799872] Epoch[14] Train-accuracy=0.572917</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:21 INFO 140120243799872] Epoch[14] Time cost=1.356</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:22 INFO 140120243799872] Epoch[14] Validation-accuracy=0.552083</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:24 INFO 140120243799872] Epoch[15] Train-accuracy=0.572917</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:24 INFO 140120243799872] Epoch[15] Time cost=1.335</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:26 INFO 140120243799872] Epoch[15] Validation-accuracy=0.535714</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:28 INFO 140120243799872] Epoch[16] Train-accuracy=0.739583</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:28 INFO 140120243799872] Epoch[16] Time cost=1.346</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:29 INFO 140120243799872] Epoch[16] Validation-accuracy=0.520833</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:31 INFO 140120243799872] Epoch[17] Train-accuracy=0.625000</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:31 INFO 140120243799872] Epoch[17] Time cost=1.347</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:33 INFO 140120243799872] Epoch[17] Validation-accuracy=0.640625</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:33 INFO 140120243799872] Storing the best model with validation accuracy: 0.640625</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:33 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0018.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:35 INFO 140120243799872] Epoch[18] Train-accuracy=0.666667</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:35 INFO 140120243799872] Epoch[18] Time cost=1.345</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:36 INFO 140120243799872] Epoch[18] Validation-accuracy=0.619792</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:38 INFO 140120243799872] Epoch[19] Train-accuracy=0.572917</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:38 INFO 140120243799872] Epoch[19] Time cost=1.351</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:40 INFO 140120243799872] Epoch[19] Validation-accuracy=0.656250</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:40 INFO 140120243799872] Storing the best model with validation accuracy: 0.656250</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:41 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0020.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:42 INFO 140120243799872] Epoch[20] Train-accuracy=0.718750</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:42 INFO 140120243799872] Epoch[20] Time cost=1.347</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:43 INFO 140120243799872] Epoch[20] Validation-accuracy=0.640625</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:45 INFO 140120243799872] Epoch[21] Train-accuracy=0.697917</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:45 INFO 140120243799872] Epoch[21] Time cost=1.349</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:47 INFO 140120243799872] Epoch[21] Validation-accuracy=0.687500</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:47 INFO 140120243799872] Storing the best model with validation accuracy: 0.687500</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:48 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0022.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:49 INFO 140120243799872] Epoch[22] Train-accuracy=0.635417</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:49 INFO 140120243799872] Epoch[22] Time cost=1.342</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:50 INFO 140120243799872] Epoch[22] Validation-accuracy=0.708333</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:51 INFO 140120243799872] Storing the best model with validation accuracy: 0.708333</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:51 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0023.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:52 INFO 140120243799872] Epoch[23] Train-accuracy=0.552083</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:52 INFO 140120243799872] Epoch[23] Time cost=1.352</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:54 INFO 140120243799872] Epoch[23] Validation-accuracy=0.656250</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:56 INFO 140120243799872] Epoch[24] Train-accuracy=0.562500</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:56 INFO 140120243799872] Epoch[24] Time cost=1.372</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:57 INFO 140120243799872] Epoch[24] Validation-accuracy=0.708333</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:59 INFO 140120243799872] Epoch[25] Train-accuracy=0.750000</span>
+<span class="ansi-blue-fg">[11/14/2021 01:00:59 INFO 140120243799872] Epoch[25] Time cost=1.345</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:01 INFO 140120243799872] Epoch[25] Validation-accuracy=0.723958</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:01 INFO 140120243799872] Storing the best model with validation accuracy: 0.723958</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:02 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0026.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:03 INFO 140120243799872] Epoch[26] Train-accuracy=0.708333</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:03 INFO 140120243799872] Epoch[26] Time cost=1.374</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:04 INFO 140120243799872] Epoch[26] Validation-accuracy=0.760417</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:05 INFO 140120243799872] Storing the best model with validation accuracy: 0.760417</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:06 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0027.params&#34;</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:07 INFO 140120243799872] Epoch[27] Train-accuracy=0.781250</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:07 INFO 140120243799872] Epoch[27] Time cost=1.375</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:09 INFO 140120243799872] Epoch[27] Validation-accuracy=0.660714</span>
+
+2021-11-14 01:01:21 Uploading - Uploading generated training model<span class="ansi-blue-fg">[11/14/2021 01:01:11 INFO 140120243799872] Epoch[28] Train-accuracy=0.666667</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:11 INFO 140120243799872] Epoch[28] Time cost=1.349</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:12 INFO 140120243799872] Epoch[28] Validation-accuracy=0.713542</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:14 INFO 140120243799872] Epoch[29] Train-accuracy=0.781250</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:14 INFO 140120243799872] Epoch[29] Time cost=1.347</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:15 INFO 140120243799872] Epoch[29] Validation-accuracy=0.781250</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:16 INFO 140120243799872] Storing the best model with validation accuracy: 0.781250</span>
+<span class="ansi-blue-fg">[11/14/2021 01:01:16 INFO 140120243799872] Saved checkpoint to &#34;/opt/ml/model/image-classification-0030.params&#34;</span>
+
+2021-11-14 01:02:15 Completed - Training job completed
+ProfilerReport-1636851289: NoIssuesFound
+Training seconds: 217
+Billable seconds: 217
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -15558,7 +15735,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sagemaker.model_monitor</span> <span class="kn">import</span> <span class="n">DataCaptureConfig</span>
@@ -15586,7 +15763,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">deployment</span> <span class="o">=</span> <span class="n">img_classifier_model</span><span class="o">.</span><span class="n">deploy</span><span class="p">(</span>
@@ -15603,13 +15780,31 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-------------!image-classification-2021-11-14-01-03-24-435
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;image-classification-2021-11-12-14-27-45-190&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#endpoint = &quot;image-classification-2021-11-12-14-27-45-190&quot; #this was the first endpoint </span>
 </pre></div>
 
     </div>
@@ -15628,7 +15823,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictor</span> <span class="o">=</span> <span class="n">sagemaker</span><span class="o">.</span><span class="n">predictor</span><span class="o">.</span><span class="n">Predictor</span><span class="p">(</span>
@@ -15652,7 +15847,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sagemaker.serializers</span> <span class="kn">import</span> <span class="n">IdentitySerializer</span>
@@ -15681,7 +15876,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">inference</span><span class="p">)</span>
@@ -15701,7 +15896,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>b&#39;[0.9187491536140442, 0.08125081658363342, 4.672147048526525e-17, 2.068283892552693e-17, 4.1350159942762365e-17, 4.3318892814030424e-17, 4.4722806910712574e-17, 4.672271456490653e-17, 5.0738123882202295e-17, 4.7339698657642484e-17, 4.5159277032732304e-17, 6.977852456397251e-18, 4.1705642465368254e-17, 4.784567842089627e-17, 4.691596049961117e-17, 4.216169691557079e-17, 5.906169497046614e-17, 3.7212817585731384e-17, 9.837084134567434e-18, 4.9065769824411986e-17, 2.6269926148259174e-17, 4.1152827735831715e-17, 4.493913780195234e-17, 3.5041117753199964e-17, 4.7142727101458906e-17, 5.3235200171765124e-17, 4.0590457415858963e-17, 3.014873816792038e-17, 5.0105893196415765e-17, 3.151086971750125e-17, 4.2610703786954374e-17, 5.262382436358228e-17, 5.1661925807746417e-17, 5.762028973970064e-17, 2.6832134340831865e-17, 5.0493675467580624e-17, 4.73758299067988e-17, 4.6451346384429934e-17, 3.7653053033899456e-17, 5.30561883610413e-17, 5.131036412124403e-17, 4.40719580436987e-17, 5.341950262968684e-17, 4.4381538659752796e-17, 3.321210230483701e-17, 2.9473831579971015e-17, 4.170484506325775e-17, 4.664347066222395e-17, 3.292034577662221e-17, 5.055689853615928e-17, 4.730251192602455e-17, 3.721068676847345e-17, 5.2661173222600275e-17, 4.8575969713939737e-17, 5.440105168815451e-17, 5.414019862762469e-17, 4.537599504449875e-17, 5.252635270892148e-17, 4.1810300665190913e-17, 2.84736709577209e-17, 5.2747428308154854e-17, 1.2247167493469286e-17, 4.189092099641278e-17, 2.2922741453924572e-17, 5.020346742147252e-17, 4.509231510778491e-17, 4.543176356139707e-17, 5.187975885897858e-17, 4.992844972013334e-17, 4.50881891308895e-17, 3.173596872323408e-17, 5.0015565073524974e-17, 4.896554862139506e-17, 5.84683219211349e-17, 5.81983963436466e-17, 2.8680793674381726e-17, 3.2771492971032067e-17, 4.8603217043317233e-17, 4.5650658712535755e-17, 3.35207597873275e-17, 4.160616903362508e-17, 3.9665461041510315e-17, 4.736679378578727e-17, 5.318120513010011e-17, 5.57213080464055e-17, 3.232415038704094e-17, 5.027303661971068e-17, 5.4217497001506545e-17, 3.904797071423948e-17, 5.081211022491149e-17, 4.9153252445995594e-17, 4.816762042402436e-17, 4.7807366723645264e-17, 4.9658534068812386e-17, 5.0206531298461416e-17, 1.8471078735929567e-17, 5.706642945386983e-17, 2.95687654445125e-17, 5.2432659615298826e-17, 1.9793985380863174e-17]&#39;
+<pre>b&#39;[0.9196859002113342, 0.08031406998634338, 1.854172841299348e-20, 1.2830404943658548e-20, 8.52683140137663e-21, 1.5425850521018463e-20, 1.537081069854101e-20, 1.3485444747095316e-20, 1.6356588653266875e-20, 1.6478399076400977e-20, 1.5230382249275927e-20, 1.8256562743577225e-20, 1.7657175070141657e-20, 1.7087565898757998e-20, 4.774004646793392e-21, 1.44628054928536e-20, 1.8308868992624133e-20, 1.9053034275889222e-20, 1.158206742248742e-20, 1.5663094644869194e-20, 1.8514798191058623e-20, 8.105195471173331e-21, 5.136688610274516e-21, 1.8306914132192123e-20, 1.519550333864232e-20, 1.1779591528857834e-20, 1.894887575778003e-20, 1.8121331638121876e-20, 1.5206347159485007e-20, 1.5550396133170246e-20, 2.2533441939645835e-20, 1.6379693164868673e-20, 1.3382847693951031e-20, 1.2647496246294893e-20, 1.7821409195824646e-20, 1.3383767770823783e-20, 1.515053023959615e-20, 1.439543227819601e-20, 1.7494254416798522e-20, 1.885477911634072e-20, 2.2469666637535423e-20, 1.1478527674250509e-20, 1.283706277823732e-20, 1.7147836992374996e-20, 1.6427685796268088e-20, 1.7129923362234395e-20, 1.8240064367765914e-20, 1.850060687367451e-20, 1.761425376675553e-20, 1.5388646780499184e-20, 1.593447289368481e-20, 1.475154645659716e-20, 2.19426265715427e-20, 1.128751519182325e-20, 1.1678918639990016e-20, 1.4915472005137576e-20, 1.804345549150685e-20, 8.582307432380236e-21, 1.3258253614185231e-20, 2.2079827077714265e-20, 1.858754807969781e-20, 1.4455908551379013e-20, 1.5875681677882456e-20, 1.6580675435499184e-20, 1.8494469258152852e-20, 1.660023050216782e-20, 1.85210844405966e-20, 1.8396312646246072e-20, 1.752350946861905e-20, 8.78442384517874e-21, 1.702289556137541e-20, 1.0709454884142198e-20, 1.6035697505558852e-20, 5.784418285827203e-21, 1.8214059877258778e-20, 4.582786580903345e-21, 1.398957094076804e-20, 1.591023908667642e-20, 1.2916688605718352e-20, 1.6983071338524956e-20, 1.1438314094900788e-20, 1.755428478793257e-20, 1.839182131401385e-20, 1.5996718234779425e-20, 9.501198464175812e-21, 2.054552013252777e-20, 1.6023467510955285e-20, 1.5682883971672245e-20, 1.9404156290046643e-20, 1.971762381487443e-20, 1.157318977118668e-20, 5.9979795178822025e-21, 1.9595848934657272e-20, 1.380466376211976e-20, 1.6013017893373267e-20, 1.3264476048031419e-20, 1.581378853478303e-20, 1.4348938911656848e-20, 1.3909326343414725e-20, 1.860542455133433e-20, 1.5922625793231975e-20, 1.798298406508525e-20, 1.3495995338873201e-20, 1.8573442388431792e-20, 1.4541636451464758e-20, 1.572493770476747e-20, 1.6925832701958274e-20, 1.9496755282212833e-20, 1.5318538376823913e-20, 2.0410689692681627e-20, 1.2340008817243211e-20, 1.6328223789957122e-20, 7.994160206428725e-21, 2.012731570939686e-20, 1.3000130450009638e-20, 1.7501531021249575e-20, 7.719116998199875e-21, 1.745765490586732e-20, 1.929307498106872e-20, 8.47200483640085e-21]&#39;
 </pre>
 </div>
 </div>
@@ -15870,7 +16065,7 @@ upload: test/velocipede_s_001744.png to s3://mybucket696969696969696969696969/te
         <span class="s2">&quot;s3_bucket&quot;</span><span class="p">:</span> <span class="n">bucket</span><span class="p">,</span>
         <span class="s2">&quot;s3_key&quot;</span><span class="p">:</span> <span class="n">obj</span>
     <span class="p">})</span>
-<span class="n">generate_test_case</span><span class="p">()</span> <span class="c1">#Testcase codes are TypeError and can&#39;t find a solution to fix, so I wrote my own function.</span>
+<span class="n">generate_test_case</span><span class="p">()</span> <span class="c1">#Testcase codes are TypeError and can&#39;t find a solution to fix, so I wrote my own function down there.</span>
 </pre></div>
 
     </div>
