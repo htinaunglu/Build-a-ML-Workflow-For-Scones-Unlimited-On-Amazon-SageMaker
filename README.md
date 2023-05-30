@@ -14,9 +14,9 @@ Training is on **ml.p2.xlarge** instance and the training job only takes aroung 
 
 # Inference Endpoint
 After that we use sagemaker's endpoint option to deploy the model as a usable endpoint.
-Using Lambda functions to collect and predict the input data and a function to see low confidence attamps, and Combining all together as a statemachine using AWS's step function.
+Using Lambda functions to collect and predict the input data and a function to see low confidence attamps, and Combining all together as a statemachine using AWS's step function. 
 
-# Thanks
+# Thanks a lot everybody!!!!
 
 
 
